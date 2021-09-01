@@ -110,7 +110,7 @@ contract PolarPals is ERC721, Ownable {
         }
     }
 
-    function withdraw() public payable onlyOwner {
-        require(payable(msg.sender).send(address(this).balance));
+    function withdraw(address payee) public payable onlyOwner {
+        require(payable(payee).send(address(this).balance));
     }
 }
