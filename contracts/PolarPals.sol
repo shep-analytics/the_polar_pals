@@ -11,7 +11,7 @@ contract PolarPals is ERC721, Ownable {
     Counters.Counter private _tokenIds;
 
     uint256 private constant _maxTokens = 10000;
-    uint256 private constant _maxPresaleTokens = 1000;
+    uint256 private _maxPresaleTokens = 1000;
     uint256 private constant _maxMint = 10;
     uint256 public constant _price = 69000000000000000; // 0.069 ETH
     bool private _presaleActive = false;
@@ -31,6 +31,10 @@ contract PolarPals is ERC721, Ownable {
 
     function totalSupply() public view returns (uint256) {
         return _tokenIds.current();
+    }
+
+    function setMaxPresaleTokens(uint256 newMaxMint) public onlyOwner {
+        _maxPresaleTokens = newMaxMint;
     }
 
     function togglePreSale() public onlyOwner {
