@@ -33,8 +33,8 @@ contract PolarPals is ERC721, Ownable {
         return _tokenIds.current();
     }
 
-    function setMaxPresaleTokens(uint256 newMaxMint) public onlyOwner {
-        _maxPresaleTokens = newMaxMint;
+    function setMaxPresaleTokens(uint256 newMaxPresaleMint) public onlyOwner {
+        _maxPresaleTokens = newMaxPresaleMint;
     }
 
     function togglePreSale() public onlyOwner {
